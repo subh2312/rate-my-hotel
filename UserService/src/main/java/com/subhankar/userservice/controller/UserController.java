@@ -37,4 +37,9 @@ public class UserController {
     public ResponseEntity<ResponseDTO> getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @GetMapping("/ratings/{id}")
+    public ResponseEntity<ResponseDTO> getUserRating(@PathVariable String id) {
+        return userService.getUserRating(id);
+    }
 }

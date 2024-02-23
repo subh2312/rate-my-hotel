@@ -1,5 +1,7 @@
 
 j
-java:S1192"HDefine a constant instead of duplicating this literal "failure" 4 times.(—ξε–ϊÿÿÿÿ8Ή­ΡΆέ1
+java:S1192"HDefine a constant instead of duplicating this literal "failure" 3 times.(—ξε–ϊÿÿÿÿ8ς‘θ¥έ1
 j
-java:S1192"HDefine a constant instead of duplicating this literal "success" 5 times.(άπΊώÿÿÿÿ8Ή­ΡΆέ1
+java:S1192"HDefine a constant instead of duplicating this literal "success" 5 times.(άπΊώÿÿÿÿ8σ‘θ¥έ1
+s
+java:S1128"QRemove this unused import 'com.subhankar.ratingservice.integration.model.UserDO'.(·¬ΙΖϊÿÿÿÿ8Ζ΅¦«έ1

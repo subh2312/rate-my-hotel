@@ -32,4 +32,14 @@ public class AddressController {
     public ResponseEntity<ResponseDTO> deleteAddress(@PathVariable String addressId) {
         return addressService.deleteAddress(addressId);
     }
+
+    @GetMapping("/user/{id}")
+    public ResponseEntity<ResponseDTO> getAddressByUser(@PathVariable String id) {
+        return addressService.getAddressByUser(id);
+    }
+
+    @GetMapping("/hotel/{id}")
+    public ResponseEntity<ResponseDTO> getAddressByHotel(@PathVariable String id) {
+        return addressService.getAddressByUser(id);
+    }
 }

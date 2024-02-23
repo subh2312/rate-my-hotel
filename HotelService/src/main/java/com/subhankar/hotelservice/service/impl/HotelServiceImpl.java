@@ -1,5 +1,7 @@
 package com.subhankar.hotelservice.service.impl;
 
+import com.subhankar.hotelservice.integration.RatingService.model.RatingDO;
+import com.subhankar.hotelservice.integration.RatingService.service.RatingIntegration;
 import com.subhankar.hotelservice.model.DO.HotelDO;
 import com.subhankar.hotelservice.model.DTO.ResponseDTO;
 import com.subhankar.hotelservice.repository.HotelRepository;
@@ -9,11 +11,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class HotelServiceImpl implements HotelService {
     private final HotelRepository hotelRepository;
-
+    private final RatingIntegration ratingIntegration;
 
     @Override
     public ResponseEntity<ResponseDTO> addHotel(HotelDO hotelDO) {
@@ -22,7 +26,14 @@ public class HotelServiceImpl implements HotelService {
 
     @Override
     public ResponseEntity<ResponseDTO> getHotel(String id) {
-        return hotelRepository.findById(id).map(hotelDO -> new ResponseEntity<>(ResponseDTO.builder().message("Hotel found").data(hotelDO).status("200").build(), HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(ResponseDTO.builder().message("Hotel not found").status("404").build(), HttpStatus.NOT_FOUND));
+        ResponseEntity<ResponseDTO> responseEntity = ratingIntegration.getRatingByHotelId(id);
+
+        HotelDO hotelDO = hotelRepository.findById(id).orElseThrow(()->new RuntimeException("Hotel not found"));
+        if(responseEntity.getStatusCode() == HttpStatus.NOT_FOUND){
+            return new ResponseEntity<>(ResponseDTO.builder().message("Hotel found").data(hotelDO).status("200").build(), HttpStatus.OK);
+        }
+        hotelDO.setRatings((List<RatingDO>) responseEntity.getBody().getData());
+        return new ResponseEntity<>(ResponseDTO.builder().message("Hotel found").data(hotelDO).status("200").build(), HttpStatus.OK);
     }
 
     @Override

@@ -1,10 +1,14 @@
 package com.subhankar.userservice.model.DO;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.subhankar.userservice.integration.model.AddressDO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCrypt;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -25,6 +29,8 @@ public class UserDO {
     private String salt;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @Transient
+    private List<AddressDO> addresses=new ArrayList<>();
 
     @JsonIgnore
     @Transient

@@ -9,4 +9,6 @@ public interface AddressService {
     ResponseEntity<ResponseDTO> getAddress(String addressId);
     ResponseEntity<ResponseDTO> updateAddress(AddressDO addressDO);
     ResponseEntity<ResponseDTO> deleteAddress(String addressId);
+    ResponseEntity<ResponseDTO> getAddressByUser(String id);
+    ResponseEntity<ResponseDTO> getAddressByHotel(String id);
 }

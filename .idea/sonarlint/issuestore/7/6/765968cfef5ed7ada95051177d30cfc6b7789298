@@ -1,0 +1,11 @@
+
+i
+java:S1128"LRemove this unused import 'com.subhankar.userservice.model.DTO.ResponseDTO'.(Âş‘8 ™Æªİ1
+f
+java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8 ™Æªİ1
+l
+java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.(‡¡‰Ø8 ™Æªİ1
+s
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.PathVariable'.(¹ûñÅşÿÿÿÿ8 ™Æªİ1
+s
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.RequestParam'.(Â¬À·ùÿÿÿÿ8İÒ¾©İ1

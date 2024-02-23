@@ -15,6 +15,7 @@ public class AddressDO {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+    private String consumer;
     private String addressLine1;
     private String addressLine2;
     private String city;
