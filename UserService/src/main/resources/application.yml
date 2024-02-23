@@ -29,3 +29,49 @@ eureka:
         defaultZone: http://localhost:6001/eureka/
   instance:
     prefer-ip-address: true
+
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+resilience4j:
+  circuitbreaker:
+    instances:
+      ratingService:
+        registerHealthIndicator: true
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 5
+        waitDurationInOpenState: 10000
+        failureRateThreshold: 50
+        event-consumer-buffer-size: 10
+        automatic-transition-from-open-to-half-open-enabled: true
+        permittedNumberOfCallsInHalfOpenState: 3
+        sliding-window-type: COUNT_BASED
+      hotelService:
+        registerHealthIndicator: true
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 5
+        waitDurationInOpenState: 10000
+        failureRateThreshold: 50
+        event-consumer-buffer-size: 10
+        automatic-transition-from-open-to-half-open-enabled: true
+        permittedNumberOfCallsInHalfOpenState: 3
+        sliding-window-type: COUNT_BASED
+      addressService:
+        registerHealthIndicator: true
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 5
+        waitDurationInOpenState: 10000
+        failureRateThreshold: 50
+        event-consumer-buffer-size: 10
+        automatic-transition-from-open-to-half-open-enabled: true
+        permittedNumberOfCallsInHalfOpenState: 3
+        sliding-window-type: COUNT_BASED

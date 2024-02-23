@@ -33,3 +33,12 @@ spring:
             uri: lb://RATING-SERVICE
             predicates:
               - Path=/ratings/**
+
+#OKTA Configuration
+okta:
+  oauth2:
+    issuer: https://dev-98929057.okta.com/oauth2/default
+    client-id: 0oafbkqignAVRVrGi5d7
+    client-secret: tZ5Ak0xdiktauhnaIv1cREKy_5TP35dqi3hv247aJYkkCyMtKQEJDTfUjPC98yPy
+    audience: api://default
+    scopes: openid, profile, email, offline_access

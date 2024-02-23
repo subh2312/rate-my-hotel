@@ -115,3 +115,11 @@ SAddressService/src/main/java/org/subhankar/addressservice/model/DO/AddressType.
 ]UserService/src/main/java/com/subhankar/userservice/integration/service/HotelIntegration.java,7\a\7addf7aa537fabfa3df0b9aa45d8609eee4dd54a
 è
 _UserService/src/main/java/com/subhankar/userservice/integration/service/AddressIntegration.java,d\3\d3211153f86d48b57d2dc0994fefdf370661eb28
+C
+RateMyHotel/pom.xml,d\3\d369377093910b5475c51b17c48cc100dd667aae
+~
+NRateMyHotel/src/main/java/com/subhankar/ratemyhotel/config/SecurityConfig.java,b\9\b915237d1d3970b638afccef1ffd66fbc6151ab3
+Ç
+RRateMyHotel/src/main/java/com/subhankar/ratemyhotel/controller/AuthController.java,a\2\a2c211c9ab68d8cd2c261a5295867e2886cae94a
+
+ORateMyHotel/src/main/java/com/subhankar/ratemyhotel/model/DTO/AuthResponse.java,9\f\9f1a8c3c0fd67d32c8dc4e671014d3647ad9a3bc

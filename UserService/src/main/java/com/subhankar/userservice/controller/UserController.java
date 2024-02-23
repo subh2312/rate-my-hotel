@@ -3,6 +3,7 @@ package com.subhankar.userservice.controller;
 import com.subhankar.userservice.model.DO.UserDO;
 import com.subhankar.userservice.model.DTO.ResponseDTO;
 import com.subhankar.userservice.service.UserService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
