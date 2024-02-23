@@ -40,6 +40,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<ResponseDTO> getAllUsers() {
-        return new ResponseEntity<>(new ResponseDTO("User saved successfully","200",userRepository.findAll()), HttpStatus.OK);
+        return new ResponseEntity<>(new ResponseDTO("Users fetched successfully","200",userRepository.findAll()), HttpStatus.OK);
     }
 }

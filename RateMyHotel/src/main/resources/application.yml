@@ -1,0 +1,32 @@
+server:
+  port: 6000
+
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:6001/eureka
+
+spring:
+  application:
+    name: RATE-MY-HOTEL-API-GATEWAY
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: USER-SERVICE
+            uri: lb://USER-SERVICE
+            predicates:
+              - Path=/users/**
+          - id: HOTEL-SERVICE
+            uri: lb://HOTEL-SERVICE
+            predicates:
+              - Path=/hotels/**
+          - id: ADDRESS-SERVICE
+            uri: lb://ADDRESS-SERVICE
+            predicates:
+              - Path=/addresses/**
+          - id: RATING-SERVICE
+            uri: lb://RATING-SERVICE
+            predicates:
+              - Path=/ratings/**
